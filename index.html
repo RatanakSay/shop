@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Rank Shop</title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+    <header class="shop-header">
+        <div class="container">
+            <img src="image/logo1.png" alt="">
+            <p class="subtitle">We happy that you give us your money</p>
+        </div>
+    </header>
+
+      
+
+    <main class="container shop-container">
+        <div class="rank-grid">
+            
+            <div class="rank-card tier-demon">
+                <h2 class="rank-title">DEMON</h2>
+                <div class="rank-img-wrapper">
+                    <img src="image/demon2.png" alt="Demon" class="rank-img">
+                </div>
+                
+                <div class="price-tag">
+                    <span class="diamond-icon">◆</span> 5$
+                </div>
+
+                <div class="perks-container">
+                    <div class="perk-row">
+                        <span class="perk-icon">🏠</span>
+                        <span class="perk-text">/sethome (1)</span>
+                    </div>
+                    <div class="perk-row">
+                        <span class="perk-icon">📦</span>
+                        <span class="perk-text">Nothig</span>
+                    </div>
+                    <div class="perk-row">
+                        <span class="perk-icon">⭐</span>
+                        <span class="perk-text">Free Cancer</span>
+                    </div>
+                </div>
+                <button class="buy-btn" onclick="togglePopup('DEMON', '5')">PURCHASE</button>
+            </div>
+
+            <div class="rank-card tier-titanium">
+                <h2 class="rank-title">TITANIUM</h2>
+                <div class="rank-img-wrapper">
+                    <img src="image/titanium.png" alt="Titanium" class="rank-img">
+                </div>
+                
+                <div class="price-tag">
+                    <span class="diamond-icon">◆</span> 10$
+                </div>
+
+                <div class="perks-container">
+                    <div class="perk-row">
+                        <span class="perk-icon">🏠</span>
+                        <span class="perk-text">/sethome (5)</span>
+                    </div>
+                    <div class="perk-row">
+                        <span class="perk-icon">📦</span>
+                        <span class="perk-text">Noob Kit</span>
+                    </div>
+                    <div class="perk-row">
+                        <span class="perk-icon">⭐</span>
+                        <span class="perk-text">cancer last stage</span>
+                    </div>
+                </div>
+                <button class="buy-btn" onclick="togglePopup('TITANIUM', '10')">PURCHASE</button>
+            </div>
+
+            <div class="rank-card tier-tatan">
+                <h2 class="rank-title">TITAN</h2>
+                <div class="rank-img-wrapper">
+                    <img src="image/titan.png" alt="Titan" class="rank-img">
+                </div>
+                
+                <div class="price-tag">
+                    <span class="diamond-icon">◆</span> $15
+                </div>
+
+                <div class="perks-container">
+                    <div class="perk-row">
+                        <span class="perk-icon">🏠</span>
+                        <span class="perk-text">/sethome (10)</span>
+                    </div>
+                    <div class="perk-row">
+                        <span class="perk-icon">📦</span>
+                        <span class="perk-text">hentavirus</span>
+                    </div>
+                    <div class="perk-row">
+                        <span class="perk-icon">⭐</span>
+                        <span class="perk-text">Custom Chat Tag</span>
+                    </div>
+                </div>
+                <button class="buy-btn" onclick="togglePopup('TITAN', '15')">PURCHASE</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="shop-footer">
+        <div class="container">
+            <div class="thank-you-bar">
+                <span>◆</span> THANK YOU FOR SUPPORTING THE SERVER! <span>◆</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP MODAL -->
+    <div class="popup" id="popup">
+        <div class="popup-overlay" onclick="togglePopup()"></div>
+        
+        <div class="popup-content">
+            <button class="exit-btn" onclick="togglePopup()">✕</button>
+            
+            <div class="popup-header">
+               <img src="image/icon3.png" alt="" height="250px">
+            </div>
+
+            <div class="popup-body">
+                <!-- Left Panel: Your Information -->
+                <div class="info-panel">
+                    <h3 class="section-title">Your Information</h3>
+                    
+                    <form id="purchase-form">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Minecraft Username <span class="required">*</span>
+                            </label>
+                            <input type="text" id="player-name" placeholder="Enter your username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Edition <span class="required">*</span>
+                            </label>
+                            <select id="edition" required>
+                                <option value="">Select Edition</option>
+                                <option value="java">Java Edition</option>
+                                <option value="bedrock">Bedrock Edition</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Email <span class="optional">(optional)</span>
+                            </label>
+                            <input type="email" id="email" placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Discount Code <span class="optional">(optional)</span>
+                            </label>
+                            <input type="text" id="code" placeholder="Enter code if you have one">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Telegram Username <span class="optional">(optional)</span>
+                            </label>
+                            <input type="text" id="telegram" placeholder="@username">
+                        </div>
+
+                        <div class="info-note">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 15H9V9H11V15ZM11 7H9V5H11V7Z" fill="currentColor"/>
+                            </svg>
+                            <p>Your information is secure and will never be shared with third parties.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Panel: Order Summary -->
+                <div class="summary-panel">
+                    <h3 class="section-title">Order Summary</h3>
+                    
+                    <div class="summary-content">
+                        <div class="summary-item">
+                            <span class="label">Product</span>
+                            <span class="value">Minecraft Rank</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Selected Rank</span>
+                            <span class="value highlight" id="selected-rank">-</span>
+                        </div>
+
+                        <div class="summary-item">
+                            <span class="label">Price</span>
+                            <span class="value" id="selected-price">-</span>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="total-row">
+                            <span class="total-label">Total</span>
+                            <span class="total-value" id="total-amount">$0.00</span>
+                        </div>
+
+                        <button class="btn-payment">
+                            Proceed to Payment
+                        </button>
+
+                        <div class="payment-info">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 0L10.472 5.528L16 8L10.472 10.472L8 16L5.528 10.472L0 8L5.528 5.528L8 0Z" fill="currentColor"/>
+                            </svg>
+                            <span>Secure Checkout</span>
+                        </div>
+                    </div>
+
+                    <div class="thank-note">
+                        <h4>Thank You!</h4>
+                        <p>Your support helps keep the server online and improves the community experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="shop.js"></script>
+</body>
+</html>
